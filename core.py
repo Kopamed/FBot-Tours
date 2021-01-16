@@ -133,7 +133,7 @@ async def start_poll(message, args, prefix, client):
 
 
 async def code_ref(message):
-    await message.channel.send("")
+    await message.channel.send("Latest Release: https://github.com/Kopamed/FBot-Tours\nReal-Time Code on: https://repl.it/@ServerrHost/FireBot-Tours\nHosted using the help of: https://uptimerobot.com")
 
 
     

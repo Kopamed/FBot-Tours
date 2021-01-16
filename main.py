@@ -52,6 +52,7 @@ async def on_message(message):
         await help_commands(message, PREFIX)
 
     elif command == "code":
+        await code_ref(message)
         
     
     
