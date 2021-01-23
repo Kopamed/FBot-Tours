@@ -1,7 +1,27 @@
+import json
 import requests
 import discord
 import asyncio
 from beeprint import pp
+
+def load_polls():
+    with open("polls.json", "r") as file:
+        return json.load(file)
+
+def save_polls(polls):
+    with open("polls.json", "w") as file:
+        json.dump(polls, file, indent = 4)
+
+
+def add_poll(args, message_id):
+    polls = load_polls()
+    answers = []
+    for i in args[1:]:
+        answers.append(i)
+    polls[str(message_id)] = {"question": args[0], "answers":answers}
+    save_polls(polls)
+
+
 
 def num_te(num):
     if num == 0:
@@ -26,7 +46,7 @@ def num_te(num):
         num = "6️⃣"
     
     elif num == 7:
-        num = "seven"
+        num = "7️⃣"
     
     elif num == 8:
         num = "8️⃣"
@@ -103,8 +123,54 @@ async def start_poll(message, args, prefix, client):
     
     q_and_o = [a[:-1] if a[-1] == '"' else a for a in " ".join(i for i in args).split(' "')]
 
-    if q_and_o[0] == "show":
-        await message.channel.send(f'Coming Soon!')
+
+    if q_and_o[0][0:4] == "show":
+        q_and_o = q_and_o[0].split()
+        print(q_and_o)
+        if len(q_and_o) == 2:
+            polls = load_polls()
+            if str(q_and_o[1]) in polls:
+                polls = polls[str(q_and_o[1])]
+                q_msg = "{}\n\n"
+                opt_msg = "{}\n{}{}{}\n\n"
+
+                
+
+                try:
+                    reactions = await message.channel.fetch_message(int(q_and_o[1]))
+                    print(reactions.reactions)
+
+
+                    total_reactions= 0
+                    count = 0
+                    vote_count = {}
+                    for reaction in reactions.reactions:
+                        total_reactions += reaction.count -1
+                        vote_count[polls["answers"][count]] = reaction.count - 1
+                        count += 1
+                        final_message = ""
+                        final_message += q_msg.format(polls["question"])
+                        reactors_h = await reaction.get_reaction_users()
+
+        #from here you can do whatever you need with the member objects
+                    for member in reactors_h:
+                        print(member.name)
+
+                    for ques in vote_count:
+                        final_message+=opt_msg.format(ques, "test", round(vote_count[ques]/total_reactions), )
+
+
+
+                    print(vote_count)
+                    print(total_reactions)
+
+                except discord.errors.NotFound:
+                    await message.channel.send("Error: Wrong channel - The message has been found in the poll database, but has not been found in this channel. Send the show command in the channel where the message is")
+
+
+
+        else:
+            await message.channel.send(f'Error: You only need 1 argument; the id - Example: ```{prefix}poll show message_id_of_the_bots_poll_message```')
         return
 
 
@@ -130,6 +196,8 @@ async def start_poll(message, args, prefix, client):
         
         for i in range(len(q_and_o)-1):
             await message_id.add_reaction(num_te(i))
+
+        add_poll(q_and_o, message_id.id)
 
 
 async def code_ref(message):

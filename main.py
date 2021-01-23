@@ -1,6 +1,6 @@
 import discord
 import os
-from dotenv import load_dotenv
+
 from core import *
 import keep_alive
 
@@ -11,8 +11,8 @@ PREFIX = "f."
 PREFIX_LEN = len(PREFIX)
 
 
-load_dotenv()
-TOKEN = os.getenv('token')
+TOKEN = os.environ['token']
+
 
 client = discord.Client()
 
