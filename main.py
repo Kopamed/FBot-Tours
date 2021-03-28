@@ -1,17 +1,18 @@
 import discord
 import os
-
+from dotenv import load_dotenv
 from core import *
 import keep_alive
 
 
 
 
-PREFIX = "f."
+PREFIX = "/"
 PREFIX_LEN = len(PREFIX)
 
 
-TOKEN = os.environ['token']
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 
 client = discord.Client()
