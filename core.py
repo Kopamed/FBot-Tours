@@ -15,9 +15,9 @@ def save_polls(polls):
 
 def add_poll(args, message_id):
     polls = load_polls()
-    answers = []
+    answers = {}
     for i in args[1:]:
-        answers.append(i)
+        answers[i] = 0
     polls[str(message_id)] = {"question": args[0], "answers":answers}
     save_polls(polls)
 

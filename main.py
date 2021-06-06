@@ -1,6 +1,5 @@
 import discord
 import os
-from dotenv import load_dotenv
 from core import *
 import keep_alive
 
@@ -11,8 +10,7 @@ PREFIX = "/"
 PREFIX_LEN = len(PREFIX)
 
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = open("token.txt", "r").read()
 
 
 client = discord.Client()
@@ -56,7 +54,9 @@ async def on_message(message):
         await code_ref(message)
         
     
-    
+
+#add an on_reaction trigger
+
          
 
 keep_alive.keep_alive()
