@@ -4,7 +4,7 @@ import bot
 
 def run():
     client = discord.Client()
-    Bot = bot.Bot("+", client)
+    Bot = bot.Bot("}", client)
     print("[+] Bot init!")
 
     @client.event

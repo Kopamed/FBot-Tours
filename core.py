@@ -4,60 +4,9 @@ import discord
 import asyncio
 from beeprint import pp
 
-def load_polls():
-    with open("polls.json", "r") as file:
-        return json.load(file)
-
-def save_polls(polls):
-    with open("polls.json", "w") as file:
-        json.dump(polls, file, indent = 4)
-
-
-def add_poll(args, message_id):
-    polls = load_polls()
-    answers = {}
-    for i in args[1:]:
-        answers[i] = 0
-    polls[str(message_id)] = {"question": args[0], "answers":answers}
-    save_polls(polls)
 
 
 
-def num_te(num):
-    if num == 0:
-        num = "0️⃣"
-
-    elif num == 1:
-        num = "1️⃣"
-
-    elif num == 2:
-        num = "2️⃣"
-
-    elif num == 3:
-        num = "3️⃣"
-
-    elif num == 4:
-        num = "4️⃣"
-
-    elif num == 5:
-        num = "5️⃣"
-
-    elif num == 6:
-        num = "6️⃣"
-    
-    elif num == 7:
-        num = "7️⃣"
-    
-    elif num == 8:
-        num = "8️⃣"
-    
-    elif num == 9:
-        num = "9️⃣"
-
-    else:
-        num = "🧩" 
-
-    return num
 
 
 def num_tt(num):
