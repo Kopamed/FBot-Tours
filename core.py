@@ -9,41 +9,7 @@ from beeprint import pp
 
 
 
-def num_tt(num):
-    if num == 0:
-        num = "zero"
 
-    elif num == 1:
-        num = "one"
-
-    elif num == 2:
-        num = "two"
-
-    elif num == 3:
-        num = "three"
-
-    elif num == 4:
-        num = "four"
-
-    elif num == 5:
-        num = "five"
-
-    elif num == 6:
-        num = "six"
-    
-    elif num == 7:
-        num = "seven"
-    
-    elif num == 8:
-        num = "eight"
-    
-    elif num == 9:
-        num = "nine"
-
-    else:
-        num = "jigsaw" 
-
-    return num
 
 
 async def fetch_country_stats(message, args, prefix):

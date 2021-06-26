@@ -1,5 +1,6 @@
 import customToken
-
+import commands
+import utils
 
 class Bot:
     def __init__(self, prefix, client):
@@ -7,6 +8,7 @@ class Bot:
         self.p_len = len(prefix)
         self.Token = customToken.Token("token.txt")
         self.client = client
+        self.Commands = commands.Commands(self.client)
 
     async def on_ready(self):
         print(f'[+] {self.client.user} has connected to Discord!')
@@ -19,7 +21,7 @@ class Bot:
 
         command = self.get_command(message.content)
         if command != False:
-            print(command)
+            await self.execute_command(command, message)
 
     def is_command(self, message):
         prefix_len = len(self.prefix)
@@ -37,3 +39,10 @@ class Bot:
 
         else:
             return False
+
+    async def execute_command(self, command, message):
+        command_list = self.Commands.get_commands_as_strings()
+        if command in command_list:
+            await self.Commands.get_commands()[utils.index_of(command, command_list)](message)
+        else:
+            await self.Commands.not_found(message)
