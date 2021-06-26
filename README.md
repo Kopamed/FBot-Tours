@@ -1,9 +1,7 @@
-# FBot T
+# FBot Tours
+##### currently in proggress of finishing this project
+Bot is currently not ready for any server
+ETA: End of next week. Either that or next 2 years
+###### im not joking
 
-_________
-
-Simple python bot that has the following commands:
-- help
-- poll
-- country-stats
-- code
+ignore the messy code

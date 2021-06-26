@@ -1,6 +1,0 @@
-trying to fetch dyno's reactions and output their results and stuff. 
-
-Main file: alt.py
-Dependant Files: .env
-PY Dependancies: discord, os, dotenv, core, keep_alive
-
