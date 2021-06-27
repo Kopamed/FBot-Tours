@@ -9,10 +9,14 @@ class UI:
     def reload_cfg(self):
         self.cfg = self.cfg = json.loads(open(self.path, "r").read())
 
-    def construct_poll(self, args):
+    def construct_poll(self, args, pollObject):
 
         poll = self.embed(
             title=args["question"],
-            description=args["options"] #how to improve: make a poll object when poll is called in commands, making the poll obj have an attribute of get_question() and get_option()
+            description=pollObject.perfect_options(args["options"]) #how to improve: make a poll object when poll is called in commands, making the poll obj have an attribute of get_question() and get_option()
         )
         return poll
+        #also tidy up the pollObject bs like wtf
+
+    def edit_poll(self, poll_info):
+        pass

@@ -15,4 +15,12 @@ def run():
     async def on_message(message):
         await Bot.on_message(message)
 
+    @client.event
+    async def on_raw_reaction_add(payload):
+        await Bot.on_reaction_add(payload)
+
+    @client.event
+    async def on_raw_reaction_remove(payload):
+        await Bot.on_reaction_remove(payload)
+
     client.run(Bot.Token.get_token())

@@ -1,8 +1,6 @@
-import discord
 import customToken
 import commands
-import utils
-import ui
+import poll
 
 
 class Bot:
@@ -13,7 +11,8 @@ class Bot:
         self.p_len = len(prefix)
         self.Token = customToken.Token("token.txt")
         self.client = client
-        self.Commands = commands.Commands(self.client)
+        self.Poll = poll.Poll()
+        self.Commands = commands.Commands(self.client, self.Poll)
 
     async def on_ready(self):
         print(f'[+] {self.client.user} has connected to Discord!')
@@ -24,33 +23,17 @@ class Bot:
         if message.author == self.client.user:
             return
 
-        command = self.get_command(message.content)
+        command = self.Commands.get_command(message.content, self.prefix)
         if command != False:
-            await self.execute_command(command, message)
+            await self.Commands.execute_command(command, message)
 
-    def is_command(self, message):
-        prefix_len = len(self.prefix)
-        if message[0:prefix_len].lower() == self.prefix:
-            return True
+    async def on_reaction_add(self, payload):
+        if payload.member == self.client.user:
+            return
+        self.Poll.log_reaction(payload)
 
-        return False
-
-    def get_command(self, message):
-        if self.is_command(message):
-            len_prefix = len(self.prefix)
-            command = message.split(" ")[0][len_prefix:]
-
-            return command
-
-        else:
-            return False
-
-    async def execute_command(self, command, message):
-        command_list = self.Commands.get_commands_as_strings()
-        if command in command_list:
-            await self.Commands.get_commands()[utils.index_of(command, command_list)](message)
-        else:
-            await self.Commands.not_found(message)
+    async def on_reaction_remove(self, payload):
+        pass
 
     def self_destruct(self):
         print("[-] PREFIX CAN NOT HAVE SPACES IN IT")
