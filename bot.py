@@ -1,10 +1,15 @@
+import discord
 import customToken
 import commands
 import utils
+import ui
+
 
 class Bot:
     def __init__(self, prefix, client):
         self.prefix = prefix
+        if " " in self.prefix:
+            self.self_destruct()
         self.p_len = len(prefix)
         self.Token = customToken.Token("token.txt")
         self.client = client
@@ -46,3 +51,7 @@ class Bot:
             await self.Commands.get_commands()[utils.index_of(command, command_list)](message)
         else:
             await self.Commands.not_found(message)
+
+    def self_destruct(self):
+        print("[-] PREFIX CAN NOT HAVE SPACES IN IT")
+        return 69/0
