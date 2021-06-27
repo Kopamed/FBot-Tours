@@ -33,3 +33,7 @@ def get_keys(dict):
 def safe_append(arr, var):
     if var not in arr:
         arr.append(var)
+
+
+def to_str(arr):
+    return "".join(i for i in arr)

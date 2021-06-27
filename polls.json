@@ -1,5 +1,5 @@
 {
-    "858782758389284885": {
+    "858792366009221161": {
         "question": "so what do we do",
         "options": {
             "yes": {
@@ -27,10 +27,8 @@
                 "names": []
             },
             "frwef": {
-                "votes": 1,
-                "names": [
-                    "Kopamed#0001"
-                ]
+                "votes": 0,
+                "names": []
             },
             "fwwef": {
                 "votes": 0,
@@ -45,28 +43,378 @@
                 "names": []
             },
             "sgfserg": {
-                "votes": 1,
-                "names": [
-                    "Kopamed#0001"
-                ]
+                "votes": 0,
+                "names": []
             },
             "gwegwegw": {
-                "votes": 1,
-                "names": [
-                    "Kopamed#0001"
-                ]
+                "votes": 0,
+                "names": []
             },
             "r2323": {
+                "votes": 0,
+                "names": []
+            },
+            "f34f34": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858797849383010305": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
                 "votes": 1,
                 "names": [
                     "Kopamed#0001"
                 ]
             },
-            "f34f34": {
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858799040585793556": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
                 "votes": 1,
                 "names": [
                     "Kopamed#0001"
                 ]
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858806436674404353": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858806889927540736": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858807074778775572": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858807289569738783": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858807403293573150": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858807674761248768": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858807764385660940": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858808155362557992": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            }
+        }
+    },
+    "858815366280118302": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858815557452038245": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858815751850819585": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858816099688382514": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858816195704258640": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858816403523239946": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858816486038437948": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858816667693088821": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858816800446611466": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
+            }
+        }
+    },
+    "858817059458121730": {
+        "question": "is the db working?",
+        "options": {
+            "yes": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            },
+            "no": {
+                "votes": 1,
+                "names": [
+                    "Kopamed#0001"
+                ]
+            },
+            "idfk": {
+                "votes": 0,
+                "names": []
             }
         }
     }

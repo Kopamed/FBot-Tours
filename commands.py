@@ -1,14 +1,12 @@
-import ui
-import discord
 import utils
 
 
 class Commands:
-    def __init__(self, client, Poll):
+    def __init__(self, client, Poll, UI):
         self.client = client
         self.commands = [self.help, self.poll]
         self.Poll = Poll
-        self.UI = ui.UI(discord.Embed, "ui.cfg")
+        self.UI = UI
 
     async def help(self, message):
         await message.channel.send("No")
