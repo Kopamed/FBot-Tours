@@ -11,9 +11,9 @@ class Bot:
         self.client = client
         if " " in self.prefix:
             self.self_destruct()
-        self.Token = customToken.Token("token.txt")
-        self.UI = ui.UI(discord.Embed, "ui.cfg")
-        self.Poll = poll.Poll(self.UI)
+        self.Token = customToken.Token("db/token.txt")
+        self.UI = ui.UI(discord.Embed, "db/ui.cfg")
+        self.Poll = poll.Poll(self.UI, "db/polls.json")
         self.Commands = commands.Commands(self.client, self.Poll, self.UI)
 
 

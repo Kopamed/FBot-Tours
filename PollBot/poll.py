@@ -83,7 +83,7 @@ class Poll:
         poll = self.load_polls()[msg_id]
         option_keys = utils.get_keys(poll["options"])
         if vote_id == -1 and len(poll["options"]) >11: #number is the amount of available emojis that connect to one option
-            for i in option_keys[10:]:#the number -1
+            for i in option_keys[11:]:#the number -1
                 if member_name not in poll["options"][i]["names"]:
                     poll["options"][i]["votes"] += 1
                     poll["options"][i]["names"].append(member_name)
