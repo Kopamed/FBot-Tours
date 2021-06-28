@@ -24,4 +24,5 @@ To change the appearance, go to `db/ui.cfg` and edit the options.<br>
 To change the token, go to start.py and change the `}` in `Bot = bot.Bot("}", client)` to whatever you want your prefix to be.
 
 ### Where is this being hosted?
-Here `To be inserted`
+Here `https://replit.com/@ServerrHost/FBot-Tours` <br>
+View the uptime at `https://FBot-Tours.serverrhost.repl.co`
