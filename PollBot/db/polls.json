@@ -647,5 +647,18 @@
                 ]
             }
         }
+    },
+    "858995028239581194": {
+        "question": "ok so",
+        "options": {
+            "yes": {
+                "votes": 0,
+                "names": []
+            },
+            "no": {
+                "votes": 0,
+                "names": []
+            }
+        }
     }
 }
