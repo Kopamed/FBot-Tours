@@ -8,18 +8,24 @@ class Commands:
         self.Poll = Poll
         self.UI = UI
 
-    async def help(self, message):
-        await message.channel.send("No")
+    async def help(self, message, prefix):
+        string = "We have the following commands:\n"
+        for i in self.commands:
+            string+=f"`{prefix}{i.__name__}`\n"
+        await message.channel.send(string)
 
     async def not_found(self, message):
         await message.channel.send("Command not found")
 
-    async def poll(self, message):
-        args = self.Poll.get_msg_args(message.content)
-        embed = self.UI.construct_poll(args, self.Poll)
-        posted_poll = await message.channel.send(content=None, embed=embed)
-        self.Poll.add_poll_db(posted_poll.id, args)
-        await self.Poll.add_reactions(posted_poll, args["options"])
+    async def poll(self, message, prefix):
+        try:
+            args = self.Poll.get_msg_args(message.content)
+            embed = self.UI.construct_poll(args, self.Poll)
+            posted_poll = await message.channel.send(content=None, embed=embed)
+            self.Poll.add_poll_db(posted_poll.id, args)
+            await self.Poll.add_reactions(posted_poll, args["options"])
+        except Exception as e:
+            await self.Poll.check_format(message, prefix, e)
 
     def get_commands(self):
         return self.commands
@@ -47,9 +53,9 @@ class Commands:
         else:
             return False
 
-    async def execute_command(self, command, message):
+    async def execute_command(self, command, message, prefix):
         command_list = self.get_commands_as_strings()
         if command in command_list:
-            await self.get_commands()[utils.index_of(command, command_list)](message)
+            await self.get_commands()[utils.index_of(command, command_list)](message, prefix)
         else:
             await self.not_found(message)

@@ -53,9 +53,10 @@ class Poll:
                 string.append(f"Votes: {poll_info['options'][options[i]]['votes']} - {voters}\n")
             return string
 
-    def check_format(self, content):
-        #to do
-        pass
+    async def check_format(self, message, prefix, e):
+            await message.channel.send(f'Invalid usage: `{e}`\n - Example: ```{prefix}poll Question goes here "options must be" '
+                                   f'"in quotation marks" "and seperated" "by spaces"```')
+
 
     async def add_reactions(self, message, options):
         options = utils.to_str(self.perfect_options(options)) #gotta tidy this bs up

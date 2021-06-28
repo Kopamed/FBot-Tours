@@ -6,8 +6,9 @@ import discord
 
 
 class Bot:
-    def __init__(self, prefix, client):
+    def __init__(self, prefix, client, status='{}help'):
         self.prefix = prefix
+        self.status = status.format(self.prefix)
         self.client = client
         if " " in self.prefix:
             self.self_destruct()
@@ -18,7 +19,9 @@ class Bot:
 
 
     async def on_ready(self):
+        await self.client.change_presence(activity=discord.Game(self.status))
         print(f'[+] {self.client.user} has connected to Discord!')
+        print(f'[+] Status: {self.status}')
         print(f'[+] Token: {self.Token.get_token()}')
         print(f'[+] Prefix: {self.prefix}')
 
@@ -28,7 +31,7 @@ class Bot:
 
         command = self.Commands.get_command(message.content, self.prefix)
         if command != False:
-            await self.Commands.execute_command(command, message)
+            await self.Commands.execute_command(command, message, self.prefix)
 
     async def on_reaction_add(self, payload):
         if payload.member == self.client.user:

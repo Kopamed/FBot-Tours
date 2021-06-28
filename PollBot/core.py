@@ -33,7 +33,8 @@ async def fetch_country_stats(message, args, prefix):
 async def start_poll(message, args, prefix, client):
     
     if args == []:
-        await message.channel.send(f'Invalid usage - Example: ```{prefix}poll Question goes here "options must be" "in quotation marks" "and seperated" "by spaces"```To see poll results do ```{prefix}poll show message_id_goes_here```')
+        await message.channel.send(f'Invalid usage - Example: ```{prefix}poll Question goes here "options must be" '
+                                   f'"in quotation marks" "and seperated" "by spaces"```')
         return
     
     q_and_o = [a[:-1] if a[-1] == '"' else a for a in " ".join(i for i in args).split(' "')]
